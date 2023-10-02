@@ -22,4 +22,12 @@ app.get('/weather/:temperature', (req, res) => {
   res.status(200).send(phrase)
 })
 
+let inputs = []
+
+app.get('/challenge', (req, res) => {
+  inputs.push(req.query.input)
+  res.status(200).send(inputs)
+})
+
+
 app.listen(4000, () => console.log('server runnning on 4000'))
